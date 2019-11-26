@@ -3,9 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.9.3",
     "react": "^16.12.0",
+    "react-burger-menu": "^2.6.12",
+    "react-chartjs-2": "^2.8.0",
+    "react-charts": "^2.0.0-beta.6",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-linechart": "^1.1.12",
+    "react-native-responsive-linechart": "^2.2.0",
+    "react-responsive-carousel": "^3.1.51",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "react-sidebar": "^3.0.2",
+    "react-svg-line-chart": "^2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +38,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/core": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.4",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^3.1.2"
   }
 }
