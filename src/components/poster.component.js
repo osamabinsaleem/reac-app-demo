@@ -14,31 +14,31 @@ export default class Poster extends Component {
 
             <Carousel >
                 <div>
-                    <img src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />
+                    <img src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" alt=""/>
                     <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" />
+                    <img src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" alt=""/>
                     <p className="legend">Legend 2</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" />
+                    <img src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" alt=""/>
                     <p className="legend">Legend 3</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/output/cats-q-c-640-480-4.jpg" />
+                    <img src="http://lorempixel.com/output/cats-q-c-640-480-4.jpg" alt=""/>
                     <p className="legend">Legend 4</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/output/cats-q-c-640-480-5.jpg" />
+                    <img src="http://lorempixel.com/output/cats-q-c-640-480-5.jpg" alt=""/>
                     <p className="legend">Legend 5</p>
                 </div> 
                 <div>
-                    <img src="http://lorempixel.com/output/cats-q-c-640-480-6.jpg" />
+                    <img src="http://lorempixel.com/output/cats-q-c-640-480-6.jpg" alt=""/>
                     <p className="legend">Legend 6</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/output/cats-q-c-640-480-7.jpg" />
+                    <img src="http://lorempixel.com/output/cats-q-c-640-480-7.jpg" alt=""/>
                     <p className="legend">Legend 7</p>
                 </div>              
                 

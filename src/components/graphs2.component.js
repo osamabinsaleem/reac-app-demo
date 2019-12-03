@@ -14,7 +14,7 @@ export default class Graphs extends Component {
 	constructor() {
 		super();
 		this.state = {
-		  users_data: null
+		  metre_data: null
 		};
 	  }
   
@@ -31,7 +31,7 @@ export default class Graphs extends Component {
 			},
 			credentials: 'same-origin'
 		  })*/
-		  Users.get().getAll()
+		  Users.get().getAllRecords()
 		  .then(
 			function(response) {
 			  if (response.status !== 200) {
@@ -43,10 +43,10 @@ export default class Graphs extends Component {
 			  // Examine the text in the response
 			  response.json().then(function(data) {
 				//console.log(data.users);
-				that.setState({ users_data: data.users });
+				that.setState({ metre_data: data.records });
 				//console.log(cookie.load('token'));
 				//cookie.save('token',data.token);
-				//console.log(cookie.load('token'));
+				console.log(data.records);
 				
 				//that.props.history.push('/poster_page');
 			  });
@@ -61,14 +61,18 @@ export default class Graphs extends Component {
 	render() {
 
 		//const temp = this.state.users_data;
-		const labels = [];
+        const V = [];
+        const I = [];
+        const P = [];
 		const age = [];
-		if(this.state.users_data){
+		if(this.state.metre_data){
 			//console.log(this.state.users_data.length);
-			for(var i=0; i<this.state.users_data.length; i++){
+			for(var i=3; i<this.state.metre_data.length; i++){
 				//console.log("here");
-				labels[i] = this.state.users_data[i].username;
-				age[i] = i+5;
+                V[i-3] = this.state.metre_data[i].Phase1.V;
+                I[i-3] = this.state.metre_data[i].Phase1.I;
+                P[i-3] = this.state.metre_data[i].Phase1.P;
+				age[i-3] = i;
 	
 			}
 			
@@ -82,10 +86,31 @@ export default class Graphs extends Component {
 		//const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
 
 		const data = {
-			labels: labels,
+			labels: age,
 			datasets: [
 			{
-				label: 'Age',
+				label: 'V',
+				fill: false,
+				lineTension: 0.1,
+				backgroundColor: 'red',
+				borderColor: 'red',
+				borderCapStyle: 'butt',
+				borderDash: [],
+				borderDashOffset: 0.0,
+				borderJoinStyle: 'miter',
+				pointBorderColor: 'red',
+				pointBackgroundColor: '#fff',
+				pointBorderWidth: 1,
+				pointHoverRadius: 5,
+				pointHoverBackgroundColor: 'red',
+				pointHoverBorderColor: 'red',
+				pointHoverBorderWidth: 2,
+				pointRadius: 1,
+				pointHitRadius: 10,
+				data: V
+            },
+            {
+				label: 'I',
 				fill: false,
 				lineTension: 0.1,
 				backgroundColor: 'rgba(75,192,192,0.4)',
@@ -103,8 +128,30 @@ export default class Graphs extends Component {
 				pointHoverBorderWidth: 2,
 				pointRadius: 1,
 				pointHitRadius: 10,
-				data: age
-			}/*,
+				data: I
+            },
+            {
+				label: 'P',
+				fill: false,
+				lineTension: 0.1,
+				backgroundColor: 'green',
+				borderColor: 'green',
+				borderCapStyle: 'butt',
+				borderDash: [],
+				borderDashOffset: 0.0,
+				borderJoinStyle: 'miter',
+				pointBorderColor: 'green',
+				pointBackgroundColor: '#fff',
+				pointBorderWidth: 1,
+				pointHoverRadius: 5,
+				pointHoverBackgroundColor: 'green',
+				pointHoverBorderColor: 'green',
+				pointHoverBorderWidth: 2,
+				pointRadius: 1,
+				pointHitRadius: 10,
+				data: P
+			}
+            /*,
 			{
 				label: 'My second dataset',
 				fill: false,
@@ -131,8 +178,8 @@ export default class Graphs extends Component {
 		return (
 			
 			<div>
-				<h2>Line Example</h2>
-				<Line data={data} />
+				<h2>Phase 1</h2>
+                <Line data={data} />          
 			</div>
 			
 		);
