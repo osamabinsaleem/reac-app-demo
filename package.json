@@ -14,7 +14,7 @@
     "react-native-responsive-linechart": "^2.2.0",
     "react-responsive-carousel": "^3.1.51",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "5.0.1",
     "react-sidebar": "^3.0.2",
     "react-svg-line-chart": "^2.0.2"
   },
